@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
+import evento from "./Evento";
 
 const checkinSchema = new mongoose.Schema({
   aluno: { type: String, required: true }, /**ALUNO**/
-  evento: { type: String, required: true } /**EVENTO**/
+  evento: { type: evento, required: true } /**EVENTO**/
 });
 
 const checkin = mongoose.model("checkins", checkinSchema);
