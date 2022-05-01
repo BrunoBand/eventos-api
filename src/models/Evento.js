@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import docente from "./Docente";
+import docente from "./Docente.js";
 
 const eventoSchema = new mongoose.Schema({
   nome: { type: String, required: true },
@@ -9,7 +9,7 @@ const eventoSchema = new mongoose.Schema({
   categoria: { type: String, required: true } /**CATEGORIA**/,
   statusEvento: { type: Boolean, default: true },
   local: { type: String, required: true } /**LOCAL**/,
-  docente: { type: docente, required: true } /**DOCENTE**/,
+  docente: { type: mongoose.Schema.Types.ObjectId, ref: 'docente', required: true } /**DOCENTE**/,
 });
 
 const evento = mongoose.model("eventos", eventoSchema);

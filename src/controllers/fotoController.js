@@ -19,6 +19,17 @@ class fotoController {
       err ? res.status(400).send(err) : res.status(200).json(foto);
     });
   };
+
+  static excluirFoto = (req, res) => {
+    const id = req.params.id;
+    foto.findByIdAndDelete(id, (err) => {
+      if (!err) {
+        res.status(200).send({ message: `Foto removido com sucesso!` });
+      } else {
+        res.status(500).send({ message: `${err.message} - Falha ao excluir foto` });
+      }
+    });
+  }
 }
 
 export default fotoController;

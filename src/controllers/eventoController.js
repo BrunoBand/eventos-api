@@ -19,6 +19,7 @@ class eventoController {
       err ? res.status(400).send(err) : res.status(200).json(evento);
     });
   };
+
 }
 
 export default eventoController;

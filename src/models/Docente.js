@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const docenteSchema = new mongoose.Schema({
-  usuario: { type: String, required: true } /**USUARIO**/,
+  usuario: { type: mongoose.Schema.Types.ObjectId, ref: 'usuario', required: true } /**USUARIO**/,
 });
 
 const docente = mongoose.model("alunos", docenteSchema);
